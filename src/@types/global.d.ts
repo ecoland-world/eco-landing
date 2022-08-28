@@ -3,7 +3,12 @@ declare interface StoreObject {
     loading:            boolean
 }
 
-declare interface MenuItemObject {
+declare interface LinkObject {
     label:              string
     url:                string
+}
+
+declare interface FooterLinksObject {
+    title:              string
+    items:              Array<LinkObject>
 }

@@ -2,21 +2,33 @@
     @include container;
     @include row-vcenter;
     > div {
-        @include row;
-        max-height: calc(100vh - $header-height);
-        >div {
+        display: flex;
+        height: calc(100vh - $header-height);
+
+        > div {
+            width: 50%;
             align-self: center;
             @include row-vcenter;
             &:last-child {
-                max-height: 80%;
+                align-self: stretch;
+                align-items: flex-start;
+                justify-content: flex-end;
+                img {
+                    width: 70%;
+                }
             }
+
+            // @media (max-width)
         }
     }
 }
 
 .partners {
     @include row-between-center;
-    >div {
-        flex: 1;
+    padding-top: $space-5;
+    padding-bottom: $space-5;
+    margin-bottom: 15em;
+    > div {
+        width: 200px;
     }
 }

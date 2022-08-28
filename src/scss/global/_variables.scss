@@ -17,16 +17,17 @@ $breakpoints: (
 	xxl:			1400px
 );
 
-$container-width:	1300px;
-$subcontainer-width:1100px;
+$container-width:	1400px;
+$subcontainer-width:1200px;
 $header-height:		100px;
 
 $font:				Poppins;
+$font2:				SF-Pro-Display;
 
-$font-size-0:		20px;
-$font-size-1:		4.125em;
-$font-size-2:		3.14em;
-$font-size-3:		2em;
+$font-size-0:		18px;
+$font-size-1:		3.75em;
+$font-size-2:		2.35em;
+$font-size-3:		1.525em;
 
 $font-sizes:		(
 	0:					$font-size-0,
@@ -41,6 +42,11 @@ $space-2:			1em;
 $space-3:			2em;
 $space-4:			3em;
 $space-5:			5em;
+$space-6:			7em;
+$space-7:			10em;
+$space-8:			15em;
+$space-9:			20em;
+$space-10:			40em;
 
 $spaces:			(
 	0:					$space-0,
@@ -49,6 +55,36 @@ $spaces:			(
 	3:					$space-3,
 	4:					$space-4,
 	5:					$space-5
+);
+
+$width-0:			calc(100% * 0 / 12);
+$width-1:			calc(100% * 1 / 12);
+$width-2:			calc(100% * 2 / 12);
+$width-3:			calc(100% * 3 / 12);
+$width-4:			calc(100% * 4 / 12);
+$width-5:			calc(100% * 5 / 12);
+$width-6:			calc(100% * 6 / 12);
+$width-7:			calc(100% * 7 / 12);
+$width-8:			calc(100% * 8 / 12);
+$width-9:			calc(100% * 9 / 12);
+$width-10:			calc(100% * 10 / 12);
+$width-11:			calc(100% * 11 / 12);
+$width-12:			calc(100% * 12 / 12);
+
+$width:				(
+	0:					$width-0,
+	1:					$width-1,
+	2:					$width-2,
+	3:					$width-3,
+	4:					$width-4,
+	5:					$width-5,
+	6:					$width-6,
+	7:					$width-7,
+	8:					$width-8,
+	9:					$width-9,
+	10:					$width-10,
+	11:					$width-11,
+	12:					$width-12
 );
 
 $white:             #FFFFFF;

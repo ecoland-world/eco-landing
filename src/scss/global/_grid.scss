@@ -9,12 +9,16 @@
 
 // $breakpoints
 
+@mixin row-between {
+	@include flex(row, space-between, none, wrap, )
+}
+
 @mixin row-between-center {
 	@include flex(none, space-between, center, wrap, );
 }
 
 @mixin row-between-end {
-	@include flex(none, space-between, flex-end, none, )
+	@include flex(none, space-between, flex-end, wrap, )
 }
 
 @mixin row-end-center {
@@ -27,20 +31,47 @@
 
 @mixin row {
 	display: flex;
+	flex-wrap: wrap;
 	margin-left: -$space-2;
 	margin-right: -$space-2;
 }
 
-.col-xl-6 {
-	flex: 1 1 50%;
+@mixin col {
 	padding-left: $space-2;
 	padding-right: $space-2;
+}
+
+@each $pKey, $pValue in $breakpoints {
+	@each $wKey, $wValue in $width {
+		.col-#{$pKey}-#{$wKey} {
+			// @media (min-width: $pValue) {
+			// 	width: $wValue;
+			// 	@include col;
+			// }
+			@include media($pKey) {
+				width: $wValue;
+				@include col;
+			}
+		}
+	}
+}
+
+.row {
+	@include row;
+}
+
+.row-between {
+	@include row-between;
 }
 
 @each $key, $value in $spaces {
 	.mr-#{$key} {
 		margin-right: $value;
 	}
+}
+
+.fill {
+	flex: 1;
 }
 
 .mr {

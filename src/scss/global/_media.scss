@@ -1,0 +1,10 @@
+@mixin media ($bp) {
+    $point: is-exist($bp, $breakpoints);
+    @if($point != false) {
+        @media (min-width: $point) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown #{$point} in breakpoint";
+    }
+}

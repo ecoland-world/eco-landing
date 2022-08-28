@@ -12,7 +12,7 @@ export default function Layout ({children}: {children: any}) {
                     </div>
                     <menu>
                         <ul className="menu">
-                            {config.menu.map((i:MenuItemObject, k:number) => (
+                            {config.menu.map((i:LinkObject, k:number) => (
                                 <li key={k}>
                                     <Link to={i.url}>{i.label}</Link>
                                 </li>
@@ -21,7 +21,7 @@ export default function Layout ({children}: {children: any}) {
                     </menu>
                     <div className="agency">
                         <ul>
-                            {config.agency.map((i:MenuItemObject, k:number) => (
+                            {config.agency.map((i:LinkObject, k:number) => (
                                 <li key={k}>
                                     <Link to={i.url}>{i.label}</Link>
                                 </li>
@@ -33,31 +33,26 @@ export default function Layout ({children}: {children: any}) {
             { children }
             <footer>
                 <div className="footer">
-                    <div className="col-xl-4"></div>
-                    <div className="col-xl-6">
-                        <div className="col-md-3">
-                            <h3>Explore</h3>
-                            <ul>
-                                <li>Home</li>
-                                <li>Home</li>
-                                <li>Home</li>
-                            </ul>
+                    <div className="row">
+                        <div className="col-xl-5">
+                            <div className="logo">
+                                <img src={Logo} alt="Logo" />
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipisc-ing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex</p>
                         </div>
-                        <div className="col-md-3">
-                            <h3>Explore</h3>
-                            <ul>
-                                <li>Home</li>
-                                <li>Home</li>
-                                <li>Home</li>
-                            </ul>
-                        </div>
-                        <div className="col-md-3">
-                            <h3>Explore</h3>
-                            <ul>
-                                <li>Home</li>
-                                <li>Home</li>
-                                <li>Home</li>
-                            </ul>
+                        <div className="col-xl-7">
+                            <div className="row-between">
+                                {config.footerItems.map((i:FooterLinksObject, k:number) => (
+                                    <div key={k} className="fill">
+                                        <h3>{i.title}</h3>
+                                        <ul>
+                                            {i.items.map((item:LinkObject, lk:number) => (
+                                                <li key={lk}>{item.label}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

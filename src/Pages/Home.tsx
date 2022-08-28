@@ -185,7 +185,7 @@ function Home () {
         <main>
             <section className="banner">
                 <div className="container">
-					<div className="col-xl-6">
+					<div>
 						<h1>Play Earn Plant!</h1>
 						<p className="text-3">Build your environment both in digital and real Don’t forget, every tree counts</p>
 						<div>
@@ -193,7 +193,7 @@ function Home () {
 							<button className="btn-primary text-upper">Watch now</button>
 						</div>
 					</div>
-					<div className="col-xl-6">
+					<div>
 						<img src={Hero} alt="Hero" />
 					</div>
 				</div>
@@ -244,35 +244,37 @@ function Home () {
             </section>
             <section className="full">
 				<div className="subcontainer">
-					<div className="col-xl-8">
-						<h2>Ecoverse</h2>
-						<p>We believe that all the innovations (discoveries/tools) in the world can be used for good. Thus, we believe that blockchain can also be used in a beneficial way and how fun we can make it. We are against the use of everything that mankind has invented to destroy the world. If you think so too, let's make the blockchain useful.</p>
-						<p>This is our forest. We created it all together with you. This forest exists both in the real world and in our metaverse. You can find here all the people who are involved in the creation of this forest. By playing our games you are helping to save our planet. After all, we plant a tree on behalf of each of our users. If you don’t have time/desire to play games, but want to plant a tree and leave you name on the blockchain forever, then you can donate coins that will be sent to help protect our environ-</p>
-					</div>
-					<div className="col-xl-4">
-						<div className="row">
-							<div className="col-md-6">
-								<div className="icon-wrap">
-									<img src={Tree} alt="Tree" />
-									<span>Ecology</span>
+					<div className="row">
+						<div className="col-xl-8">
+							<h2>Ecoverse</h2>
+							<p>We believe that all the innovations (discoveries/tools) in the world can be used for good. Thus, we believe that blockchain can also be used in a beneficial way and how fun we can make it. We are against the use of everything that mankind has invented to destroy the world. If you think so too, let's make the blockchain useful.</p>
+							<p>This is our forest. We created it all together with you. This forest exists both in the real world and in our metaverse. You can find here all the people who are involved in the creation of this forest. By playing our games you are helping to save our planet. After all, we plant a tree on behalf of each of our users. If you don’t have time/desire to play games, but want to plant a tree and leave you name on the blockchain forever, then you can donate coins that will be sent to help protect our environ-</p>
+						</div>
+						<div className="col-xl-4">
+							<div className="row">
+								<div className="col-md-6">
+									<div className="icon-wrap">
+										<img src={Tree} alt="Tree" />
+										<span>Ecology</span>
+									</div>
 								</div>
-							</div>
-							<div className="col-md-6">
-								<div className="icon-wrap">
-									<img src={EarthPlant} alt="EarthPlant" />
-									<span>Ecology</span>
+								<div className="col-md-6">
+									<div className="icon-wrap">
+										<img src={EarthPlant} alt="EarthPlant" />
+										<span>Ecology</span>
+									</div>
 								</div>
-							</div>
-							<div className="col-md-6">
-								<div className="icon-wrap">
-									<img src={Jewel} alt="Jewel" />
-									<span>Future</span>
+								<div className="col-md-6">
+									<div className="icon-wrap">
+										<img src={Jewel} alt="Jewel" />
+										<span>Future</span>
+									</div>
 								</div>
-							</div>
-							<div className="col-md-6">
-								<div className="icon-wrap">
-									<img src={Pot} alt="Pot" />
-									<span>Clean</span>
+								<div className="col-md-6">
+									<div className="icon-wrap">
+										<img src={Pot} alt="Pot" />
+										<span>Clean</span>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -281,7 +283,7 @@ function Home () {
             </section>
             <section className="full">
 				<div className="subcontainer">
-					<h2>Our Features</h2>
+					<h2 className="text-center">Our Features</h2>
 					<div className="row">
 						<div className="col-xl-4">
 							<div className="card">
@@ -320,7 +322,7 @@ function Home () {
             </section>
             <section className="full">
 				<div className="subcontainer">
-					<h2>How it works</h2>
+					<h2 className="text-center">How it works</h2>
 					<div className="row">
 						{_WorkData.map((i:any, k:number) => (
 							<div key={k} className="col-xl-4">
@@ -337,7 +339,7 @@ function Home () {
             </section>
             <section className="full">
 				<div className="subcontainer">
-					<h2>Our Roadmap</h2>
+					<h2 className="text-center">Our Roadmap</h2>
 					<div className="row">
 						{_RoadmapData.map((i:any, k:number) => (
 							<div key={k} className="col-xl-4">
@@ -345,7 +347,7 @@ function Home () {
 									<h3>{i.title}</h3>
 									<ul>
 										{i.items.map((li:string, k:number) => (
-											<ol key={k}>{li}</ol>
+											<li key={k}>{k + 1}. {li}</li>
 										))}
 									</ul>
 								</div>
@@ -358,7 +360,7 @@ function Home () {
             </section>
             <section className="full">
 				<div className="subcontainer">
-					<h2>Frequently Asked Questions</h2>
+					<h2 className="text-center">Frequently Asked Questions</h2>
 					<div>
 						{_FapData.map((i:any, k:number) => (
 							<div key={k} className="slide">
@@ -375,7 +377,7 @@ function Home () {
             </section>
             <section className="full">
 				<div className="subcontainer">
-					<h2>We are everywhere!</h2>
+					<h2 className="text-center">We are everywhere!</h2>
 					<div className="row">
 						{_EverywhereData.map((i:CardObject, k:number) => (
 							<div key={k} className="col-xl-4">

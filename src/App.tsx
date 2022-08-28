@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './Layout';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Layout from './Layout'
 import mapping from './RouterMapping'
 import './scss/index.scss'
 

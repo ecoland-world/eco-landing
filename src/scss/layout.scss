@@ -1,3 +1,10 @@
+.logo {
+	flex: 1;
+	img {
+		width: 200px;
+	}
+}
+
 header {
 	// position: fixed;
 	// width: 100%;
@@ -5,12 +12,6 @@ header {
 		min-height: $header-height;
 		@include container;
 		@include row-between-end;
-		.logo {
-			flex: 1;
-			img {
-				width: 200px;
-			}
-		}
 		ul {
 			@include row-between-center;
 			gap: $space-2;
@@ -36,4 +37,9 @@ header {
 
 .footer {
 	@include container;
+	padding-top: $space-6;
+	padding-bottom: $space-6;
+	ul {
+		color: var(--color2)
+	}
 }
