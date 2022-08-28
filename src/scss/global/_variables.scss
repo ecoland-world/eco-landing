@@ -39,14 +39,14 @@ $font-sizes:		(
 $space-0:			0em;
 $space-1:			0.5em;
 $space-2:			1em;
-$space-3:			2em;
-$space-4:			3em;
-$space-5:			5em;
-$space-6:			7em;
-$space-7:			10em;
-$space-8:			15em;
-$space-9:			20em;
-$space-10:			40em;
+$space-3:			1.5em;
+$space-4:			2em;
+$space-5:			3em;
+$space-6:			5em;
+$space-7:			7em;
+$space-8:			10em;
+$space-9:			15em;
+$space-10:			20em;
 
 $spaces:			(
 	0:					$space-0,
@@ -54,7 +54,12 @@ $spaces:			(
 	2:					$space-2,
 	3:					$space-3,
 	4:					$space-4,
-	5:					$space-5
+	5:					$space-5,
+	6:					$space-6,
+	7:					$space-7,
+	8:					$space-8,
+	9:					$space-9,
+	10:					$space-10
 );
 
 $width-0:			calc(100% * 0 / 12);
@@ -89,20 +94,32 @@ $width:				(
 
 $white:             #FFFFFF;
 $black:             #000000;
+$primary:			#1194f2;
+$light-primary:		#d3ecfe;
+$gray:				#6b6262;
+$lightgray:			#c0b3b3;
 
-$bg:                #e6f4fe;
-$box:				#d3ecfe;
-$color:             #436f98;
+$theme-colors: (
+	white:				$white,
+	black:				$black,
+	primary:			$primary,
+	lightprimary:		$light-primary,
+	gray:				$gray
+);
+
+$bg:                #f1edfb;
+$box:				#ffffff;
+$color:             #0a1927;
 
 $bg-dark:           #011d4a;
 $color-dark:        #eef2f8;
 
 :root {
-	--bg:               $bg;
-	--color:            $color;
+	--bg:               #f1edfb;
+	--color:            #0a1927;
 
-	--bg-dark:          $bg-dark;
-	--color-dark:       $color-dark;
+	--bg-dark:          #011d4a;
+	--color-dark:       #eef2f8;
 }
 
 .dark {

@@ -7,9 +7,6 @@ import LogoDarkIcon     from "./assets/images/Logo/Logo-Light.png"
 
 export const config = Config
 
-export const Logo = LogoIcon
-export const LogoDark = LogoDarkIcon
-
 const getStore = (initialState: StoreObject) => {
     try {
     } catch (err) {
@@ -49,7 +46,9 @@ const useStore = () => {
 
     const showLoading = (visible: boolean) => update({loading: visible})
 
-    return { ...G, dispatch, update, showLoading }
+    const Logo = G.theme === "" ? LogoIcon : LogoDarkIcon
+
+    return { ...G, dispatch, update, showLoading, Logo }
 }
 
 export default useStore

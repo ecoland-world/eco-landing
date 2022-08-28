@@ -36,10 +36,47 @@ header {
 }
 
 .footer {
-	@include container;
-	padding-top: $space-6;
-	padding-bottom: $space-6;
+	position: relative;
+	max-width: calc($container-width - $space-4);
+	margin: 0 auto;
+	padding-top: $space-7;
+	padding-bottom: $space-7;
+	border-top: 1px solid $gray;
+
 	ul {
 		color: var(--color2)
+	}
+
+	.logo {
+		margin-bottom: $space-5;
+	}
+
+	.links {
+		>div {
+			width: 180px;
+
+			h3 {
+				margin-bottom: $space-1;
+			}
+
+			ul {
+				list-style: none;
+				li {
+					display: block;
+					margin-bottom: $space-2;
+				}
+			}
+		}
+	}
+
+	&:before {
+		position: absolute;
+		top: -2.5px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $lightgray;
+		z-index: 1;
+		content: "";
 	}
 }

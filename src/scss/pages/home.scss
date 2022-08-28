@@ -1,5 +1,6 @@
 .banner {
-    @include container;
+    padding-top: $space-0;
+    margin-bottom: $space-0;
     @include row-vcenter;
     > div {
         display: flex;
@@ -11,24 +12,66 @@
             @include row-vcenter;
             &:last-child {
                 align-self: stretch;
-                align-items: flex-start;
                 justify-content: flex-end;
-                img {
+                >img {
                     width: 70%;
                 }
             }
-
-            // @media (max-width)
+            h1 {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-bottom: $space-1;
+            }
+            p {
+                margin-top: 0;
+            margin-bottom: 1.5em;
+            }
         }
     }
 }
 
 .partners {
     @include row-between-center;
-    padding-top: $space-5;
-    padding-bottom: $space-5;
-    margin-bottom: 15em;
+    margin-left: -2em;
     > div {
         width: 200px;
     }
+}
+
+section {
+    position: relative;
+}
+
+.img-effect2 {
+    position: absolute;
+    width: 1400px;
+    max-height: initial;
+    top: 50%;
+    right: 40%;
+    transform: translate(0, -60%);
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.sharp1 {
+    margin-top: -$space-4;
+    width: 280px;
+
+    @include media-up(md) {
+        display: none;
+    }
+}
+
+.sharp2 {
+    width: 280px;
+    padding-top: $space-3;
+    padding-bottom: $space-3;
+
+    @include media-up(md) {
+        display: none;
+    }
+}
+
+.sharp3 {
+    width: 220px;
 }

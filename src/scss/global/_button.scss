@@ -2,6 +2,10 @@
     padding: 0.8em 1em;
 }
 
+button, a {
+    transition: all ease-in-out .3s;
+}
+
 .btn-primary {
     @include btn;
 }

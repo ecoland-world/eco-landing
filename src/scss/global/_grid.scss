@@ -29,28 +29,32 @@
 	@include flex(none, flex-start, center, wrap, )
 }
 
-@mixin row {
+@mixin row($sp: 0.25em) {
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: -$space-2;
-	margin-right: -$space-2;
+	margin-left: -$sp;
+	margin-right: -$sp;
+	margin-bottom: calc($sp * 2);
+	row-gap: calc($sp * 2);
+
+	>* {
+		padding-left: $sp;
+		padding-right: $sp;
+		height: 100%;
+	}
 }
 
-@mixin col {
-	padding-left: $space-2;
-	padding-right: $space-2;
+@each $key, $value in $spaces {
+	.row-#{$key} {
+		@include row($value);
+	}
 }
 
 @each $pKey, $pValue in $breakpoints {
 	@each $wKey, $wValue in $width {
 		.col-#{$pKey}-#{$wKey} {
-			// @media (min-width: $pValue) {
-			// 	width: $wValue;
-			// 	@include col;
-			// }
-			@include media($pKey) {
+			@include media-down($pKey) {
 				width: $wValue;
-				@include col;
 			}
 		}
 	}
@@ -60,13 +64,61 @@
 	@include row;
 }
 
+.row-center {
+	@include row;
+	align-items: center;
+}
+
 .row-between {
 	@include row-between;
 }
 
 @each $key, $value in $spaces {
+	.m-#{$key} {
+		margin: $value !important;
+	}
+	.mx-#{$key} {
+		margin-left: $value !important;
+		margin-right: $value !important;
+	}
+	.my-#{$key} {
+		margin-top: $value !important;
+		margin-bottom: $value !important;
+	}
+	.ml-#{$key} {
+		margin-left: $value !important;
+	}
+	.mt-#{$key} {
+		margin-top: $value !important;
+	}
 	.mr-#{$key} {
-		margin-right: $value;
+		margin-right: $value !important;
+	}
+	.mb-#{$key} {
+		margin-bottom: $value !important;
+	}
+	.p-#{$key} {
+		padding: $value !important;
+	}
+	.px-#{$key} {
+		padding-left: $value !important;
+		padding-right: $value !important;
+	}
+	.py-#{$key} {
+		padding-top: $value !important;
+		padding-bottom: $value !important;
+	}
+	.pl-#{$key} {
+		padding-left: $value !important;
+	}
+	.pt-#{$key} {
+		padding-top: $value !important;
+	}
+	.pr-#{$key} {
+		padding-right: $value !important;
+	}
+	.pb-#{$key} {
+		padding-bottom: $value !important;
 	}
 }
 

@@ -29,6 +29,12 @@ import Illustration1Dark		from "../assets/images/Illustrations/1-Light.png"
 import Illustration2Dark		from "../assets/images/Illustrations/2-Light.png"
 import Illustration3Dark		from "../assets/images/Illustrations/3-Light.png"
 
+import Effect1					from "../assets/images/Effect/1.png"
+import Effect2					from "../assets/images/Effect/2.png"
+import Effect3					from "../assets/images/Effect/3.png"
+import Effect4					from "../assets/images/Effect/4.png"
+import Effect5					from "../assets/images/Effect/5.png"
+
 const _WorkData = [
 	{
 		image: Illustration1,
@@ -162,17 +168,17 @@ const _FapData = [
 
 const _EverywhereData = [
 	{
-		image: Sharp1,
+		image: require("../assets/images/Everywhere/1.jpg"),
 		title: "#planting",
 		content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 	},
 	{
-		image: Sharp1,
+		image: require("../assets/images/Everywhere/1.jpg"),
 		title: "#planting",
 		content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 	},
 	{
-		image: Sharp1,
+		image: require("../assets/images/Everywhere/1.jpg"),
 		title: "#planting",
 		content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 	}
@@ -200,6 +206,9 @@ function Home () {
             </section>
             <section>
                 <div className="container">
+					<div className="img-effect2">
+						<img src={Effect2} alt="" />
+					</div>
 					<div className="partners">
 						{theme === '' && (
 							<>
@@ -242,38 +251,46 @@ function Home () {
 					</div>
 				</div>
             </section>
-            <section className="full">
+            <section className="full" id="about">
 				<div className="subcontainer">
-					<div className="row">
+					<div className="row-3">
 						<div className="col-xl-8">
 							<h2>Ecoverse</h2>
 							<p>We believe that all the innovations (discoveries/tools) in the world can be used for good. Thus, we believe that blockchain can also be used in a beneficial way and how fun we can make it. We are against the use of everything that mankind has invented to destroy the world. If you think so too, let's make the blockchain useful.</p>
 							<p>This is our forest. We created it all together with you. This forest exists both in the real world and in our metaverse. You can find here all the people who are involved in the creation of this forest. By playing our games you are helping to save our planet. After all, we plant a tree on behalf of each of our users. If you don’t have time/desire to play games, but want to plant a tree and leave you name on the blockchain forever, then you can donate coins that will be sent to help protect our environ-</p>
 						</div>
 						<div className="col-xl-4">
-							<div className="row">
-								<div className="col-md-6">
-									<div className="icon-wrap">
-										<img src={Tree} alt="Tree" />
-										<span>Ecology</span>
+							<div className="row-1">
+								<div className="col-xl-6 col-md-3 col-sm-6 col-xs-12">
+									<div className="card card-primary px-1">
+										<div className="card-img-6">
+											<img src={Tree} alt="Tree" />
+										</div>
+										<span className="card-title-effect">Ecology</span>
 									</div>
 								</div>
-								<div className="col-md-6">
-									<div className="icon-wrap">
-										<img src={EarthPlant} alt="EarthPlant" />
-										<span>Ecology</span>
+								<div className="col-xl-6 col-md-3 col-sm-6 col-xs-12">
+									<div className="card card-primary px-1">
+										<div className="card-img-6">
+											<img src={EarthPlant} alt="EarthPlant" />
+										</div>
+										<span className="card-title-effect">Ecology</span>
 									</div>
 								</div>
-								<div className="col-md-6">
-									<div className="icon-wrap">
-										<img src={Jewel} alt="Jewel" />
-										<span>Future</span>
+								<div className="col-xl-6 col-md-3 col-sm-6 col-xs-12">
+									<div className="card card-primary px-1">
+										<div className="card-img-6">
+											<img src={Jewel} alt="Jewel" />
+										</div>
+										<span className="card-title-effect">Future</span>
 									</div>
 								</div>
-								<div className="col-md-6">
-									<div className="icon-wrap">
-										<img src={Pot} alt="Pot" />
-										<span>Clean</span>
+								<div className="col-xl-6 col-md-3 col-sm-6 col-xs-12">
+									<div className="card card-primary px-1">
+										<div className="card-img-6">
+											<img src={Pot} alt="Pot" />
+										</div>
+										<span className="card-title-effect">Clean</span>
 									</div>
 								</div>
 							</div>
@@ -284,37 +301,57 @@ function Home () {
             <section className="full">
 				<div className="subcontainer">
 					<h2 className="text-center">Our Features</h2>
-					<div className="row">
+					<div className="row-1">
 						<div className="col-xl-4">
-							<div className="card">
-								<img src={Sharp2} alt="Sharp2" />
-								<h3>Play to <br />Earn</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</p>
-								<button className="">right</button>
+							<div className="card card-primary px-5">
+								<div className="sharp2">
+									<img src={Sharp2} alt="Sharp2" />
+								</div>
+								<div className="content">
+									<h3>Play to <br />Earn</h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</p>
+									<div>
+										<button className="">right</button>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div className="col-xl-8">
-							<div className="row">
+							<div className="row mb-2">
 								<div className="col-md-6">
-									<div className="card">
+									<div className="card card-primary">
 										<h3>Education <br />content</h3>
 										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</p>
-										<button className="">right</button>
+										<div>
+											<button className="">right</button>
+										</div>
 									</div>
 								</div>
 								<div className="col-md-6">
-									<div className="card">
+									<div className="card card-primary">
 										<h3>Influencers <br />Volunteers</h3>
 										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</p>
-										<button className="">right</button>
+										<div>
+											<button className="">right</button>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div className="card">
-								<img src={Sharp1} alt="Sharp1" />
-								<h3>Events in <br />Real Life</h3>
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</p>
-								<button className="">right</button>
+							<div className="card card-primary">
+								<div className="row">
+									<div className="col-md-6">
+										<h3>Events in <br />Real Life</h3>
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci</p>
+										<div>
+											<button className="">right</button>
+										</div>
+									</div>
+									<div className="col-md-6">
+										<div className="sharp1">
+											<img src={Sharp1} alt="Sharp1" />
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -323,24 +360,28 @@ function Home () {
             <section className="full">
 				<div className="subcontainer">
 					<h2 className="text-center">How it works</h2>
-					<div className="row">
+					<div className="row-2">
 						{_WorkData.map((i:any, k:number) => (
 							<div key={k} className="col-xl-4">
-								<div className="card">
-									<img src={i.image} alt="Sharp1" />
-									<h3>{i.title}</h3>
-									<p>{i.content}</p>
-									<button className="">right</button>
+								<div className="card card-border-gray py-1">
+									<div className="card-img sharp3 mb-3">
+										<img src={i.image} alt="Sharp1" />
+									</div>
+									<h3 className="mb-1">{i.title}</h3>
+									<p className="mb-4">{i.content}</p>
+									<div className="mb-2">
+										<button className="">right</button>
+									</div>
 								</div>
 							</div>
 						))}
 					</div>
 				</div>
             </section>
-            <section className="full">
+            <section className="full" id="roadmap">
 				<div className="subcontainer">
 					<h2 className="text-center">Our Roadmap</h2>
-					<div className="row">
+					<div className="row mb-7">
 						{_RoadmapData.map((i:any, k:number) => (
 							<div key={k} className="col-xl-4">
 								<div className="card">
@@ -358,7 +399,7 @@ function Home () {
 					<button className="text-upper">WHITEPAPER</button>
 				</div>
             </section>
-            <section className="full">
+            <section className="full" id="doc">
 				<div className="subcontainer">
 					<h2 className="text-center">Frequently Asked Questions</h2>
 					<div>
@@ -378,25 +419,31 @@ function Home () {
             <section className="full">
 				<div className="subcontainer">
 					<h2 className="text-center">We are everywhere!</h2>
-					<div className="row">
+					<div className="row-2">
 						{_EverywhereData.map((i:CardObject, k:number) => (
 							<div key={k} className="col-xl-4">
-								<div className="card">
-									<img src={i.image} alt="Sharp1" />
-									<h3>{i.title}</h3>
-									<p>{i.content}</p>
-									<button className="">right</button>
+								<div className="card card-border-primary">
+									<div className="card-img-full mb-3">
+										<img src={i.image} alt="Sharp1" />
+									</div>
+									<div className="card-content">
+										<h3 className="mb-1">{i.title}</h3>
+										<p className="mb-4">{i.content}</p>
+										<div>
+											<button className="">right</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						))}
 					</div>
 				</div>
             </section>
-			<section>
-				<div className="container">
-					<div className="row">
+			<section id="contact" className="pt-0 mb-7">
+				<div className="subcontainer">
+					<div className="row-center">
 						<div className="col-md-7">
-							<h2>Join our community</h2>
+							<h3>Join our community</h3>
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum-my nibh euismod tincidunt ut.</p>
 						</div>
 						<div className="col-md-5">

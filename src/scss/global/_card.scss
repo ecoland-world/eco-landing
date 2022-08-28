@@ -1,0 +1,48 @@
+@mixin card-img {
+    display: flex;
+    align-self: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding-top: $space-3;
+    padding-bottom: $space-3;
+    padding-left: $space-3;
+    padding-right: $space-3;
+
+    .card-img {
+        @include card-img();
+    }
+
+    @each $key, $value in $width {
+        .card-img-#{$key} {
+            @include card-img();
+            width: $value;
+        }
+    }
+
+    .card-img-full {
+        margin-top: -$space-3;
+        margin-right: -$space-3;
+        margin-left: -$space-3;
+    }
+
+    .card-title-effect {
+        text-align: center;
+        color: $primary;
+        font-size: 1.7em;
+    }
+
+    &.card-primary {
+        background-color: $light-primary;
+    }
+    
+    @each $key, $value in $theme-colors {
+        &.card-border-#{$key} {
+            border-width: 2px;
+            border-color: $value;
+            border-style: solid;
+        }
+    }
+}
