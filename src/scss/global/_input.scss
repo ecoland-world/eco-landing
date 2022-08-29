@@ -1,0 +1,19 @@
+.input-form {
+    display: flex;
+    width: 100%;
+    border: 2px solid $gray;
+    >* {
+        padding: 0.8em 1em;
+    }
+    input, button {
+        border: none;
+        outline: none;
+        margin: 0;
+        background: transparent;
+        height: 100%;
+    }
+    input {
+        flex: 1;
+        min-width: 0;
+    }
+}

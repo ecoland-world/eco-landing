@@ -8,6 +8,7 @@
     padding-right: $space-4;
     padding-left: $space-4;
     margin: auto;
+    overflow-x: hidden;
 }
 
 @mixin subcontainer {
@@ -15,6 +16,7 @@
     padding-right: $space-4;
     padding-left: $space-4;
     margin: auto;
+    overflow-x: hidden;
 }
 
 @mixin full-screen {
@@ -34,7 +36,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.25em;
     padding-top: 0.3em;
     padding-bottom: 0.3em;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: $space-2;
 }
 
 h1 {
@@ -43,10 +46,20 @@ h1 {
 
 h2 {
     font-size: $font-size-2;
+
+    @include media-up (md) {
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
 }
 
 h3 {
     font-size: $font-size-3;
+
+    @include media-up (md) {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
 }
 
 p, span {
@@ -76,6 +89,8 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 * {
@@ -88,6 +103,13 @@ div, main, section, header, menu, footer {
     margin: 0;
 }
 
+.root {
+    @each $key, $value in $breakpoints {
+        @include media-down($key) {
+            // font-size: ($value / 1400px) * $font-size-0 !important;
+        }
+    }
+}
 
 ul, ol {
     display: block;
@@ -95,13 +117,26 @@ ul, ol {
     padding: 0;
 }
 
+a {
+    font-family: $font2;
+}
+
 a, button, input {
     font-size: 0.9em;
-    letter-spacing: -0.09em;
     text-decoration: none;
 }
 
 section {
     padding-top: $space-6;
     margin-bottom: $space-8;
+
+    @include media-up (md) {
+        padding-top: $space-3;
+        margin-bottom: $space-5;
+    }
+}
+
+input {
+    display: block;
+    width: 100%;
 }

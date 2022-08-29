@@ -14,9 +14,15 @@ export default function Layout ({children}: {children: any}) {
                             <img src={Logo} alt="Logo" />
                         </Link>
                     </div>
+                    <input type="checkbox" id="menu-checkbox" />
                     <menu>
                         <ul className="menu">
                             {config.menu.map((i:LinkObject, k:number) => (
+                                <li key={k}>
+                                    <a href={i.url}>{i.label}</a>
+                                </li>
+                            ))}
+                            {config.agency.map((i:LinkObject, k:number) => (
                                 <li key={k}>
                                     <a href={i.url}>{i.label}</a>
                                 </li>
@@ -32,6 +38,9 @@ export default function Layout ({children}: {children: any}) {
                             ))}
                         </ul>
                     </div>
+                    <label htmlFor="menu-checkbox" className="hamburger">
+                        <span></span>
+                    </label>
                 </div>
             </header>
             { children }

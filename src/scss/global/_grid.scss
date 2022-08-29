@@ -29,6 +29,10 @@
 	@include flex(none, flex-start, center, wrap, )
 }
 
+@mixin row-around-center {
+	@include flex(none, space-around, center, wrap, )
+}
+
 @mixin row($sp: 0.25em) {
 	display: flex;
 	flex-wrap: wrap;
@@ -54,23 +58,33 @@
 	@each $wKey, $wValue in $width {
 		.col-#{$pKey}-#{$wKey} {
 			@include media-down($pKey) {
-				width: $wValue;
+				flex: 1 1 $wValue !important;
+				width: $wValue !important;
 			}
+			flex: 1 1 100%;
+			width: 100%;
 		}
 	}
+}
+
+.flex {
+	display: flex;
 }
 
 .row {
 	@include row;
 }
 
-.row-center {
-	@include row;
+.vcenter {
 	align-items: center;
 }
 
 .row-between {
 	@include row-between;
+}
+
+.row-around-center {
+	@include row-around-center;
 }
 
 @each $key, $value in $spaces {

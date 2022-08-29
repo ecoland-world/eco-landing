@@ -2,16 +2,49 @@
 	flex: 1;
 	img {
 		width: 200px;
+
+		@include media-up (md) {
+			width: 120px;
+		}
 	}
+
 }
 
 header {
-	// position: fixed;
-	// width: 100%;
 	.header {
+		position: relative;
 		min-height: $header-height;
 		@include container;
 		@include row-between-end;
+		overflow: initial;
+
+		#menu-checkbox {
+			display: none;
+
+			&:checked {
+				& + menu, & + div {
+					& ul {
+						display: flex;
+					}
+				}
+
+				& + label {
+					& span {
+						transform: translate3d(0px, 11px, 0) rotate(225deg);
+					}
+
+					&:before {
+						transform: rotate(0deg) translate3d(0, 0, 0);
+						opacity: 0;
+					}
+
+					&:after {
+						transform: translate3d(-0px, -11px, 0) rotate(-225deg);
+					}
+				}
+			}
+		}
+
 		ul {
 			@include row-between-center;
 			gap: $space-2;
@@ -19,64 +52,175 @@ header {
 			li {
 				a {
 					display: block;
-					padding: 1em 1.5em;
+					padding: $space-2 $space-3;
+					font-weight: 600;
 					
 					&:hover {
 						background: gray;
 					}
 				}
+
+				@include media-up (lg) {
+					width: 100%;
+				}
+			}
+
+			@include media-up (lg) {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				display: none;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 0;
+				width: 100%;
+				z-index: 9999;
 			}
 		}
 		.agency {
 			flex: 1;
 			@include row-end-center;
 			width: 200px;
+
+			@include media-up (lg) {
+				display: none;
+			}
+		}
+
+		@include media-up (md) {
+			min-height: 80px;
 		}
 	}
 }
 
-.footer {
-	position: relative;
-	max-width: calc($container-width - $space-4);
-	margin: 0 auto;
-	padding-top: $space-7;
-	padding-bottom: $space-7;
-	border-top: 1px solid $gray;
+.hamburger {
+	position: absolute;
+	bottom: $space-2;
+	right: 15px;
+	display: none;
+	background-color: transparent;
+	width: 28px;
+	height: 24px;
+	border-radius: unset;
+	cursor: pointer;
+	z-index: 10;
 
-	ul {
-		color: var(--color2)
+	span, &:after, &:before {
+		display: inline-block;
+		position: absolute;
+		right: 0px;
+		width: 100%;
+		height: 2px;
+		background-color: $gray;
+		transform: translateY(50%);
+		border-radius: 2px;
+		transition: all .3s ease-in-out;
+		content: '';
 	}
 
-	.logo {
-		margin-bottom: $space-5;
-	}
-
-	.links {
-		>div {
-			width: 180px;
-
-			h3 {
-				margin-bottom: $space-1;
-			}
-
-			ul {
-				list-style: none;
-				li {
-					display: block;
-					margin-bottom: $space-2;
-				}
-			}
-		}
+	span {
+		top: 0px;
 	}
 
 	&:before {
-		position: absolute;
-		top: -2.5px;
-		left: 0;
-		width: 100%;
-		height: 1px;
-		background-color: $lightgray;
-		z-index: 1;
-		content: "";
+		top: 11px;
+	}
+
+	&:after {
+		top: 22px;
+	}
+
+	&:active {
+		background-color: var(--border-secondary);
+	}
+
+	@include media-up (lg) {
+		display: inline-block;
+	}
+}
+
+footer {
+	padding-left: $space-1;
+	padding-right: $space-1;
+	.footer {
+		position: relative;
+		max-width: calc($container-width - $space-4);
+		margin: 0 auto;
+		padding-top: $space-7;
+		padding-bottom: $space-7;
+		border-top: 1px solid $gray;
+
+		ul {
+			color: var(--color2)
+		}
+
+		.logo {
+			margin-bottom: $space-5;
+		}
+
+		.links {
+			>div {
+				width: 180px;
+
+				h3 {
+					margin-bottom: $space-1;
+				}
+
+				ul {
+					list-style: none;
+					li {
+						display: block;
+						margin-bottom: $space-2;
+					}
+				}
+
+				@include media-up (sm) {
+					width: 100%;
+					&:last-child {
+						display: flex;
+						padding-left: $space-3;
+						padding-right: $space-3;
+						
+						>* {
+							flex: 1 1 50%;
+						}
+						h3 {
+							text-align: left;
+							margin: 0;
+						}
+						ul {
+							display: flex;
+							flex-direction: column;
+							align-items: flex-end;
+							justify-content: flex-end;
+							>li {
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+			
+			@include media-up(sm) {
+				justify-content: center;
+				h3, li {
+					text-align: center;
+				}
+				> div {
+					margin-bottom: $space-3;
+				}
+			}
+		}
+
+		&:before {
+			position: absolute;
+			top: -2.5px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: $lightgray;
+			z-index: 1;
+			content: "";
+		}
 	}
 }

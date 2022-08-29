@@ -1,6 +1,7 @@
 @mixin card-img {
     display: flex;
     align-self: center;
+    max-height: 200px;
 }
 
 .card {
@@ -23,15 +24,24 @@
     }
 
     .card-img-full {
-        margin-top: -$space-3;
-        margin-right: -$space-3;
-        margin-left: -$space-3;
+        @include card-img();
+        width: calc(100% + $space-3 * 2);
+        img {
+            margin-top: -$space-3;
+            // margin-right: -$space-3;
+            // margin-left: -$space-3;
+        }
     }
 
     .card-title-effect {
         text-align: center;
         color: $primary;
         font-size: 1.7em;
+
+        @include media-up (md) {
+            font-size: 1em;
+            margin-bottom: 0;
+        }
     }
 
     &.card-primary {
@@ -44,5 +54,10 @@
             border-color: $value;
             border-style: solid;
         }
+    }
+
+    @include media-up (md) {
+        padding-left: $space-3 !important;
+        padding-right: $space-3 !important;
     }
 }
