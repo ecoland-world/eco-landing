@@ -45,7 +45,7 @@
     }
 
     &.card-primary {
-        background-color: $light-primary;
+        background-color: var(--box);
     }
     
     @each $key, $value in $theme-colors {

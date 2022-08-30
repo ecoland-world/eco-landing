@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Icons from "./components/Icons"
 import useStore, { config } from "./useStore"
 
 interface LayoutProps {
@@ -7,7 +8,7 @@ interface LayoutProps {
 }
 
 export default function Layout ({children}: {children: any}) {
-    const { theme, Logo } = useStore()
+    const { theme, Logo, update } = useStore()
 
     const [status, setStatus] = React.useState<LayoutProps>({
         checked: false
@@ -23,6 +24,20 @@ export default function Layout ({children}: {children: any}) {
 
     return (
         <div className={`root ${theme}`} id="home">
+            <div className="setting">
+                <div>
+                    <Icons.Setting color="var(--color)" />
+                </div>
+                <div>
+                    <button className="btn btn-sm" onClick={() => {update({theme: theme==='' ? 'dark' : ''})}}>
+                        {theme === '' ? (
+                            <Icons.Sun />
+                        ) : (
+                            <Icons.Moon />
+                        )}
+                    </button>
+                </div>
+            </div>
             <header>
                 <div className="header">
                     <div className="logo">

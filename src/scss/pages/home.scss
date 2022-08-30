@@ -227,7 +227,30 @@ section {
                 margin-top: 50px;
             }
         }
-	
+        
+        &:last-child {
+            &:after {
+                left: auto !important;
+                right: 0 !important;
+            }
+
+            @include media-down (md) {
+                &:nth-child(3n + 1) {
+                    &:after {
+                        right: -75% !important;
+                    }
+                }
+            }
+
+            @include media-up (md) {
+                &:nth-child(2n + 1) {
+                    &:after {
+                        right: -75% !important;
+                    }
+                }
+            }
+        }
+
 		&.active {
 			&:before {
 				border: 2px solid $primary;
