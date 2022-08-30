@@ -9,14 +9,6 @@
     color: $color;
     border: $border;
 
-    &:hover {
-        opacity: 0.7;
-    }
-    
-    &:active {
-        opacity: 0.3;
-    }
-
     &.btn-sm {
         height: $space-4;
     }
@@ -25,6 +17,14 @@
 button, a {
     transition: all ease-in-out .1s;
     cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &:active {
+        opacity: 0.3;
+    }
 }
 
 .btn-primary {
@@ -32,9 +32,9 @@ button, a {
 }
 
 .btn-none {
-    @include btn(transparent, initial, none);
+    @include btn(transparent, var(--color), none);
 }
 
 .btn {
-    @include btn(transparent, initial, 1px solid var(--color))
+    @include btn(transparent, var(--color), 1px solid var(--color))
 }

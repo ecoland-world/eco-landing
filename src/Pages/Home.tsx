@@ -29,10 +29,10 @@ import Illustration1Dark		from "../assets/images/Illustrations/1-Light.png"
 import Illustration2Dark		from "../assets/images/Illustrations/2-Light.png"
 import Illustration3Dark		from "../assets/images/Illustrations/3-Light.png"
 
-import Effect1					from "../assets/images/Effect/1.png"
+// import Effect1					from "../assets/images/Effect/1.png"
 import Effect2					from "../assets/images/Effect/2.png"
 import Effect3					from "../assets/images/Effect/3.png"
-import Effect4					from "../assets/images/Effect/4.png"
+// import Effect4					from "../assets/images/Effect/4.png"
 import Effect5					from "../assets/images/Effect/5.png"
 import Icons from "../components/Icons"
 import Slidebar from "../components/Slidebar"
@@ -65,7 +65,8 @@ const _RoadmapData = [
 			"idea",
 			"Forming a team",
 			"Advisor"
-		]
+		],
+		active: true
 	},
 	{
 		title: "2022 Q3",
@@ -74,7 +75,8 @@ const _RoadmapData = [
 			"Whitepaper",
 			"Tokenomics",
 			"MVP"
-		]
+		],
+		active: true
 	},
 	{
 		title: "2022 Q4",
@@ -84,7 +86,8 @@ const _RoadmapData = [
 			"Seed phase sale",
 			"Private sale",
 			"Team scale-up"
-		]
+		],
+		active: false
 	},
 	{
 		title: "2023 Q2",
@@ -94,7 +97,19 @@ const _RoadmapData = [
 			"iOS/Android version",
 			"NFT sale",
 			"Staking"
-		]
+		],
+		active: false
+	},
+	{
+		title: "2023 Q1",
+		items: [
+			"Public sale",
+			"Whitelist for NFT sale",
+			"Whitelist NFT sale",
+			"Public NFT sale",
+			"Listing CEX/DEX",
+		],
+		active: false
 	},
 	{
 		title: "2023 Q3",
@@ -102,25 +117,28 @@ const _RoadmapData = [
 			"Tower Defence game",
 			"EcoForest",
 			"Planting Trees"
-		]
+		],
+		active: false
 	},
 	{
-		title: "2023 Q3",
+		title: "2023 Q4",
 		items: [
 			"Card game",
 			"Land sale",
 			"Anti-Frod system",
 			"Planting Trees",
-		]
+		],
+		active: false
 	},
 	{
-		title: "2023 Q3",
+		title: "2024 Q1-Q4",
 		items: [
 			"Animals game",
 			"NFT sale",
 			"Beta launch",
 			"Planting Trees"
-		]
+		],
+		active: false
 	},
 	{
 		title: "2025 Q1-Q4",
@@ -129,7 +147,8 @@ const _RoadmapData = [
 			"NFT sale",
 			"Launch",
 			"Planting Trees",
-		]
+		],
+		active: false
 	}
 ]
 
@@ -193,9 +212,9 @@ function Home () {
         <main>
             <section className="banner">
                 <div className="container">
-					<div className="img-effect1">
+					{/* <div className="img-effect1">
 						<img src={Effect1} alt="" />
-					</div>
+					</div> */}
 					<div>
 						<h1>Play Earn Plant!</h1>
 						<p className="text-3">Build your environment both in digital and real Don’t forget, every tree counts</p>
@@ -256,7 +275,7 @@ function Home () {
 					</div>
 				</div>
             </section>
-            <section className="full" id="about">
+            <section className="full about" id="about">
 				<div className="subcontainer">
 					<div className="row-3">
 						<div className="col-xl-8">
@@ -370,7 +389,11 @@ function Home () {
 							<div key={k} className="col-xl-4">
 								<div className="card card-border-gray py-1">
 									<div className="card-img sharp3 mb-3">
-										<img src={i.image} alt="Sharp1" />
+										{theme === '' ? (
+											<img src={i.image} alt="Sharp1" />
+										) : (
+											<img src={i.imageDark} alt="Sharp1" />
+										)}
 									</div>
 									<h3 className="mb-1">{i.title}</h3>
 									<p className="mb-4">{i.content}</p>
@@ -392,10 +415,10 @@ function Home () {
 						<img src={Effect5} alt="" />
 					</div>
 					<h2 className="text-center">Our Roadmap</h2>
-					<div className="row mb-7">
+					<div className="row mb-7 px-5 stepper-wrapper">
 						{_RoadmapData.map((i:any, k:number) => (
-							<div key={k} className="col-xl-4">
-								<div className="card">
+							<div className={`stepper${i.active ? " active" : ""}`}>
+								<div className="stepper-content">
 									<h3>{i.title}</h3>
 									<ul>
 										{i.items.map((li:string, k:number) => (
@@ -416,14 +439,6 @@ function Home () {
 				<div className="subcontainer">
 					<h2 className="text-center">Frequently Asked Questions</h2>
 					<div>
-							{/* <div key={k} className="slide">
-								<div className="header">
-									<h3>{i.label}</h3>
-								</div>
-								<div className="content">
-									<p>{i.content}</p>
-								</div>
-							</div> */}
 						{_FapData.map((i:any, k:number) => (
 							<Slidebar key={k} id={`fap-${k}`} header={(
 								<h3 className="m-0">{i.label}</h3>

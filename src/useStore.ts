@@ -19,6 +19,7 @@ const setStore = (state:any) => {
     delete state.L
     window.localStorage.setItem(config.appKey, JSON.stringify(state))
 }
+
 const initialState: StoreObject = {
     theme:              '',
     loading:            false

@@ -17,6 +17,11 @@ const Icons = {
             <path fill="none" d="M0 0h24v24H0V0z"></path>
             <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4v3z"></path>
         </svg>
+    ),
+    ArrowChevronDown: ({size, color}: IconProps) => (
+        <svg fill={ color || "var(--color)" } viewBox="0 0 16 16" height={ size || "1em" } width={ size || "1em" }>
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+        </svg>
     )
 }
 

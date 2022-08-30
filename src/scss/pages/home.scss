@@ -54,6 +54,17 @@
     }
 }
 
+.about {
+    .card {
+        @include media-up (md) {
+            padding-top: $space-1;
+            padding-bottom: $space-1;
+            padding-left: $space-1 !important;
+            padding-right: $space-1 !important;
+        }
+    }
+}
+
 .partners {
     @include row-around-center;
     
@@ -71,7 +82,6 @@ section {
 }
 
 .roadmap {
-
 }
 
 .img-effect1 {
@@ -102,7 +112,7 @@ section {
     max-height: initial;
     top: 50%;
     right: 62%;
-    transform: translate(0, -40%) rotate(60deg);
+    transform: translate(0, -55%) rotate(60deg);
     z-index: -1;
     opacity: 0.4;
 }
@@ -138,4 +148,135 @@ section {
 
 .sharp3 {
     width: 220px;
+}
+
+
+.stepper-wrapper {
+    @include media-up (sm) {
+        padding: 0 !important;
+    }
+
+	.stepper {
+		position: relative;
+		padding-left: 10%;
+		margin-bottom: $space-6;
+        width: 33.3333%;
+
+        @include media-up (xl) {
+		    padding-left: 8%;
+        }
+
+        @include media-up (lg) {
+		    padding-left: 6%;
+        }
+
+        @include media-up (md) {
+		    padding-left: 15%;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 450px) {
+		    padding-left: 10%;
+            font-size: 0.8em;
+        }
+
+		.stepper-content {
+			h3 {
+				margin-bottom: 0;
+			}
+			ul {
+				list-style: none;
+				li {
+					font-size: 1.1em;
+				}
+			}
+		}
+	
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 160px;
+			padding-top: 160px;
+            background: var(--bg);
+			border: 1px solid $gray;
+			transform: translate(-50%, 0) skew(-35deg);
+			z-index: -1;
+			content: "";
+
+            @include media-up (md) {
+                width: 100px;
+                padding-top: 100px;
+            }
+		}
+
+        &:after {
+            position: absolute;
+            top: 0%;
+            left: 100%;
+            width: calc(100% - 160px);
+            height: 1px;
+            margin-top: 80px;
+            background: $gray;
+            transform: translate(-50%, 0) skew(-35deg);
+            z-index: -2;
+            content: "";
+
+            @include media-up (md) {
+                width: calc(100% - 100px);
+                margin-top: 50px;
+            }
+        }
+	
+		&.active {
+			&:before {
+				border: 2px solid $primary;
+                background: $light-primary;
+
+                .dark & {
+                    background-color: $primary;
+                }
+			}
+
+            &:after {
+                height: 2px;
+                background: $primary;
+            }
+		}
+
+        @include media-down (md) {
+            &:nth-child(3n + 1):not(:first-child) {
+                &:after {
+                    width: calc(100vw / 2);
+                    left: auto;
+                    right: -150%;
+                }
+            }
+
+            &:nth-child(3n):not(:last-child) {
+                &:after {
+                    width: calc(100vw / 2);
+                    left: 125%;
+                }
+            }
+        }
+
+        @include media-up (md) {
+            width: 50%;
+            &:nth-child(2n + 1):not(:first-child) {
+                &:after {
+                    width: calc(100vw);
+                    left: auto;
+                    right: -150%;
+                }
+            }
+
+            &:nth-child(2n):not(:last-child) {
+                &:after {
+                    width: calc(100vw);
+                    left: 125%;
+                }
+            }
+        }
+	}
 }

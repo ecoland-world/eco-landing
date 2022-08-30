@@ -2,8 +2,24 @@ import React from "react"
 import { Link } from "react-router-dom"
 import useStore, { config } from "./useStore"
 
+interface LayoutProps {
+    checked: boolean
+}
+
 export default function Layout ({children}: {children: any}) {
     const { theme, Logo } = useStore()
+
+    const [status, setStatus] = React.useState<LayoutProps>({
+        checked: false
+    })
+
+    const onLinkHandle = () => {
+        setStatus({checked: false})
+    }
+
+    const onMenu = () => {
+        setStatus({checked: !status.checked})
+    }
 
     return (
         <div className={`root ${theme}`} id="home">
@@ -14,12 +30,12 @@ export default function Layout ({children}: {children: any}) {
                             <img src={Logo} alt="Logo" />
                         </Link>
                     </div>
-                    <input type="checkbox" id="menu-checkbox" />
+                    <input type="checkbox" id="menu-checkbox" checked={status.checked} />
                     <menu>
                         <ul className="menu">
                             {config.menu.map((i:LinkObject, k:number) => (
                                 <li key={k}>
-                                    <a href={i.url}>{i.label}</a>
+                                    <a href={i.url} onClick={onLinkHandle}>{i.label}</a>
                                 </li>
                             ))}
                             {config.agency.map((i:LinkObject, k:number) => (
@@ -38,7 +54,7 @@ export default function Layout ({children}: {children: any}) {
                             ))}
                         </ul>
                     </div>
-                    <label htmlFor="menu-checkbox" className="hamburger">
+                    <label htmlFor="menu-checkbox" className="hamburger" onClick={onMenu}>
                         <span></span>
                     </label>
                 </div>
