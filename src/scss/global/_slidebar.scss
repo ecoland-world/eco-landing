@@ -27,12 +27,14 @@
     }
 
     input:checked {
-        & + div {
+        & ~ .content {
             display: block;
         }
 
-        & ~ * {
-            display: none;
+        & ~ label {
+            span {
+                transform: rotate(-180deg);
+            }
         }
     }
 }

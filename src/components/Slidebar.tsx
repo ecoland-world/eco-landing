@@ -41,13 +41,13 @@ const Slidebar = ({ header, children, id }: SlidebarProps) => {
 
     return (
         <div className="slidebar">
+            <input type="checkbox" id={`slide-${id}`} />
             <label className="header" htmlFor={`slide-${id}`} onClick={onSlide}>
                 { header }
                 <span>
                     <Icons.ArrowChevronDown size={"1.5em"} />
                 </span>
             </label>
-            <input type="checkbox" id={`slide-${id}`} />
             <div ref={content} className="content">
                 { children }
             </div>
