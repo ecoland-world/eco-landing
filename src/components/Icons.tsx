@@ -20,7 +20,7 @@ const Icons = {
     ),
     ArrowChevronDown: ({size, color}: IconProps) => (
         <svg fill={ color || "var(--color)" } viewBox="0 0 16 16" height={ size || "1em" } width={ size || "1em" }>
-            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
         </svg>
     ),
     Setting: ({size, color}: IconProps) => (
@@ -30,7 +30,7 @@ const Icons = {
     ),
     Sun: ({size, color}: IconProps) => (
         <svg fill={ color || "var(--color)" } viewBox="0 0 24 24" height={ size || "1em" } width={ size || "1em" }>
-            <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.657-5.657L19.07 4.93M4.93 19.07l1.414-1.414m0-11.314L4.93 4.93M19.07 19.07l-1.414-1.414M12 17a5 5 0 100-10 5 5 0 000 10z"></path>
+            <path stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.657-5.657L19.07 4.93M4.93 19.07l1.414-1.414m0-11.314L4.93 4.93M19.07 19.07l-1.414-1.414M12 17a5 5 0 100-10 5 5 0 000 10z"></path>
         </svg>
     ),
     Moon: ({size, color}: IconProps) => (

@@ -117,15 +117,18 @@ $color-dark:        #eef2f8;
 :root {
 	--bg:               #f1edfb;
 	--color:            #0a1927;
+	--color2:			#554d4d;
 	--box:				#d3ecfe;
 
 	--bg-dark:          #011d4a;
 	--color-dark:       #eef2f8;
+	--color2-dark:		#c0b3b3;
 	--box-dark:			#032659;
 }
 
 .dark {
 	--bg:               var(--bg-dark);
 	--color:            var(--color-dark);
+	--color2:           var(--color2-dark);
 	--box:				var(--box-dark);
 }

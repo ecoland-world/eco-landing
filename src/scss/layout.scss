@@ -34,6 +34,27 @@
 	}
 }
 
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: $white;
+	opacity: 1;
+	z-index: 9999;
+	transition: all ease-in-out .5s;
+}
+
+.load {
+	.loading {
+		opacity: 0;
+	}
+}
+
 .logo {
 	flex: 1;
 	img {
@@ -56,30 +77,32 @@ header {
 
 		#menu-checkbox {
 			display: none;
-
-			&:checked {
-				& ~ menu {
-					& ul {
-						display: flex;
-						background: var(--bg);
-						justify-content: flex-start;
-						height: calc(100vh - $header-height);
-						top: $header-height;
+			
+			@include media-up (lg) {
+				&:checked {
+					& ~ menu {
+						& ul {
+							display: flex;
+							background: var(--bg);
+							justify-content: flex-start;
+							height: calc(100vh);
+							// top: $header-height;
+						}
 					}
-				}
-
-				& ~ .hamburger {
-					& span {
-						transform: translate3d(0px, 11px, 0) rotate(225deg);
-					}
-
-					&:before {
-						transform: rotate(0deg) translate3d(0, 0, 0);
-						opacity: 0;
-					}
-
-					&:after {
-						transform: translate3d(-0px, -11px, 0) rotate(-225deg);
+	
+					& ~ .hamburger {
+						& span {
+							transform: translate3d(0px, 11px, 0) rotate(225deg);
+						}
+	
+						&:before {
+							transform: rotate(0deg) translate3d(0, 0, 0);
+							opacity: 0;
+						}
+	
+						&:after {
+							transform: translate3d(-0px, -11px, 0) rotate(-225deg);
+						}
 					}
 				}
 			}
@@ -109,6 +132,9 @@ header {
 				position: fixed;
 				top: 0;
 				left: 0;
+				padding-top: 20%;
+				padding-left: 10%;
+				padding-right: 10%;
 				display: none;
 				flex-direction: column;
 				align-items: flex-start;
@@ -190,7 +216,7 @@ footer {
 		padding-bottom: $space-7;
 		padding-right: $space-3;
 		padding-left: $space-3;
-		border-top: 1px solid $gray;
+		border-top: 1px solid $gray;;
 
 		ul {
 			color: var(--color2)
@@ -203,6 +229,10 @@ footer {
 				text-align: center;
 				margin-bottom: $space-3;
 			}
+		}
+
+		p {
+			color: var(--color2);
 		}
 
 		.links {
@@ -220,7 +250,14 @@ footer {
 						margin-bottom: $space-2;
 						a {
 							display: block;
+							color: var(--color2);
 						}
+					}
+				}
+				
+				&:last-child {
+					li:last-child a {
+						color: var(--color1);
 					}
 				}
 

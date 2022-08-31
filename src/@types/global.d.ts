@@ -1,3 +1,5 @@
+declare module "react-awesome-reveal"
+
 declare interface StoreObject {
     theme:              "" | "dark"
     loading:            boolean

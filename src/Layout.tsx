@@ -5,22 +5,43 @@ import useStore, { config } from "./useStore"
 
 interface LayoutProps {
     checked: boolean
+    mobile: boolean
+}
+
+const getMobile = () => {
+    if (window.innerWidth > 992) {
+        return true
+    }
+
+    return false
 }
 
 export default function Layout ({children}: {children: any}) {
     const { theme, Logo, update } = useStore()
 
     const [status, setStatus] = React.useState<LayoutProps>({
-        checked: false
+        checked: false,
+        mobile: getMobile()
     })
 
     const onLinkHandle = () => {
-        setStatus({checked: false})
+        setStatus({...status, checked: false})
     }
 
     const onMenu = () => {
-        setStatus({checked: !status.checked})
+        setStatus({...status, checked: !status.checked})
     }
+
+    React.useEffect(() => {
+        const changeMobile = () => {
+            console.log("sdfsdf")
+            setStatus({...status, mobile: getMobile()})
+        }
+
+        window.addEventListener("resize", changeMobile)
+
+        // return window.removeEventListener("resize", changeMobile)
+    }, [])
 
     return (
         <div className={`root ${theme}`} id="home">
@@ -53,7 +74,7 @@ export default function Layout ({children}: {children: any}) {
                                     <a href={i.url} onClick={onLinkHandle}>{i.label}</a>
                                 </li>
                             ))}
-                            {config.agency.map((i:LinkObject, k:number) => (
+                            {!status.mobile && config.agency.map((i:LinkObject, k:number) => (
                                 <li key={k}>
                                     <a href={i.url}>{i.label}</a>
                                 </li>
@@ -77,7 +98,7 @@ export default function Layout ({children}: {children: any}) {
             { children }
             <footer>
                 <div className="footer">
-                    <div className="row">
+                    <div className="row-4">
                         <div className="col-xl-5">
                             <div className="logo">
                                 <img src={Logo} alt="Logo" />
