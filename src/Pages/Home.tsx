@@ -23,8 +23,8 @@ import EarthPlant				from "../assets/images/Icons/2.webp"
 import Jewel					from "../assets/images/Icons/13.webp"
 import Pot						from "../assets/images/Icons/11.webp"
 
-import Sharp1					from "../assets/images/Shapes/1.webp"
-import Sharp2					from "../assets/images/Shapes/2.webp"
+import Sharp1					from "../assets/images/Shapes/1.png"
+import Sharp2					from "../assets/images/Shapes/2.png"
 import Hero						from "../assets/images/Shapes/hero-1.png"
 
 import Illustration1			from "../assets/images/Illustrations/1.webp"
@@ -513,7 +513,7 @@ function Home () {
 						</div>
 					<p className="text-center mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor.</p>
 					<div className="text-center">
-						<button className="btn text-upper">WHITEPAPER</button>
+						<button className="btn text-upper">PITCH DECK</button>
 					</div>
 				</div>
 			</section>
