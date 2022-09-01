@@ -25,7 +25,7 @@ import Pot						from "../assets/images/Icons/11.webp"
 
 import Sharp1					from "../assets/images/Shapes/1.webp"
 import Sharp2					from "../assets/images/Shapes/2.webp"
-import Hero						from "../assets/images/Shapes/hero-1.webp"
+import Hero						from "../assets/images/Shapes/hero-1.png"
 
 import Illustration1			from "../assets/images/Illustrations/1.webp"
 import Illustration2			from "../assets/images/Illustrations/2.webp"
