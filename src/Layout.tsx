@@ -6,6 +6,7 @@ import useStore, { config } from "./useStore"
 interface LayoutProps {
     checked: boolean
     mobile: boolean
+    scroll: boolean
 }
 
 const getMobile = () => {
@@ -21,7 +22,8 @@ export default function Layout ({children}: {children: any}) {
 
     const [status, setStatus] = React.useState<LayoutProps>({
         checked: false,
-        mobile: getMobile()
+        mobile: getMobile(),
+        scroll: false
     })
 
     const onLinkHandle = () => {
@@ -34,11 +36,20 @@ export default function Layout ({children}: {children: any}) {
 
     React.useEffect(() => {
         const changeMobile = () => {
-            console.log("sdfsdf")
             setStatus({...status, mobile: getMobile()})
         }
 
+        const moveHeader = () => {
+            if(window.scrollY > 200) {
+                setStatus({...status, scroll: true})
+            } else {
+                setStatus({...status, scroll: false})
+            }
+        }
+
         window.addEventListener("resize", changeMobile)
+
+        window.addEventListener("scroll", moveHeader)
 
         // return window.removeEventListener("resize", changeMobile)
     }, [])
@@ -59,7 +70,7 @@ export default function Layout ({children}: {children: any}) {
                     </button>
                 </div>
             </div>
-            <header>
+            <header className={`${status.scroll ? "scroll-down" : ""}`}>
                 <div className="header">
                     <div className="logo">
                         <Link to="/">
