@@ -77,7 +77,7 @@ export default function Layout ({children}: {children: any}) {
                             <img src={Logo} alt="Logo" />
                         </Link>
                     </div>
-                    <input type="checkbox" id="menu-checkbox" checked={status.checked} />
+                    <input type="checkbox" id="menu-checkbox" defaultChecked={status.checked} />
                     <menu>
                         <ul className="menu">
                             {config.menu.map((i:LinkObject, k:number) => (
