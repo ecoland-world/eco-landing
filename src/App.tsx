@@ -4,7 +4,7 @@ import Layout from './Layout'
 import mapping from './RouterMapping'
 
 import './scss/index.scss'
-import LoadingImg from "./assets/images/Loading.gif"
+import LoadingImg from "./assets/images/loading.gif"
 
 interface AppStatus {
 	preloading: boolean

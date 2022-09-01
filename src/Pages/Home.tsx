@@ -2,7 +2,7 @@ import React from "react"
 import { Reveal } from "react-awesome-reveal"
 import { keyframes } from "@emotion/react";
 
-import useStore from "../useStore"
+import useStore, { fetchJson } from "../useStore"
 
 import Icons from "../components/Icons"
 import Slidebar from "../components/Slidebar"
@@ -41,16 +41,16 @@ import Effect3					from "../assets/images/Effect/3.webp"
 import Effect5					from "../assets/images/Effect/5.webp"
 
 const fadeInUp = keyframes`
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(100px);
+		transform: translateY(100px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
 `;
 
 const _WorkData = [
@@ -221,8 +221,34 @@ const _EverywhereData = [
 	}
 ] as CardObject[]
 
+interface HomeStatus {
+	email: string
+}
+
 function Home () {
     const { theme } = useStore()
+
+	const [status, setStatus] = React.useState<HomeStatus>({
+		email: ""
+	})
+
+	const joinUs = async() => {
+		if(status.email === "") {
+			return;
+		}
+
+		let res: any = await fetchJson (
+			process.env.REACT_APP_BACKENDURL + "/api/join-us",
+			"post",
+			{ email: status.email }
+		)
+
+		if (res.status === 200) {
+			res = await res.json()
+			console.log("success", res.data)
+			alert("Success")
+		}
+	}
 
     return (
         <main>
@@ -560,8 +586,8 @@ function Home () {
 							</div>
 							<div className="col-md-5">
 								<div className="input-form">
-									<input type="text" placeholder="EMAIL ADDRESS" />
-									<button className="text-upper">Join</button>
+									<input type="text" placeholder="EMAIL ADDRESS" value={status.email} onChange={(e) => setStatus({email: e.target?.value})} />
+									<button className="text-upper" onClick={joinUs}>Join</button>
 								</div>
 							</div>
 						</div>

@@ -39,6 +39,24 @@ export const slice = createSlice({
     }
 })
 
+export const fetchJson = (api:string, method:string, param: any) => {
+    return fetch(
+        api,
+        {
+            method: method,
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(param),
+        }
+    )
+};
+
 const useStore = () => {
     const G = useSelector((state: StoreObject) => state)
 
