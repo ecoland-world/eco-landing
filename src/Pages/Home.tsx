@@ -513,7 +513,7 @@ function Home () {
 						</div>
 					<p className="text-center mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcor.</p>
 					<div className="text-center">
-						<button className="btn text-upper">PITCH DECK</button>
+						<button className="btn text-upper">WHITEPAPER</button>
 					</div>
 				</div>
 			</section>
